@@ -9,8 +9,8 @@ djangorestframework = "*"
 pyjwt = "*"
 django-cors-headers = "*"
 gunicorn = "*"
-psycopg2-binary = "*"
 django-heroku = "*"
+psycopg2 = "*"
 
 [dev-packages]
 
