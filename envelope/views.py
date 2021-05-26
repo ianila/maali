@@ -6,7 +6,7 @@ from rest_framework import permissions
 from .models import Envelope
 from .serializers import EnvelopeSerializer
 
-class EnvelopetList(ListCreateAPIView):
+class EnvelopeList(ListCreateAPIView):
 
     serializer_class = EnvelopeSerializer
     permission_classes = [permissions.IsAuthenticated]
