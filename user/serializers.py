@@ -22,3 +22,11 @@ class LoginSerializer(serializers.ModelSerializer):
         fields = ('email', 'password', 'token')
 
         read_only_fields = ['token']
+
+class UserDetailsSerializer(serializers.ModelSerializer):
+
+    password = serializers.CharField(max_length=63, min_length=8, write_only=True)
+
+    class Meta:
+        model = MaaliUser
+        fields = ('email', 'first_name', 'last_name', 'password', 'joined', 'last_login')
