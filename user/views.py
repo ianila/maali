@@ -40,14 +40,7 @@ class UserDetailView(APIView):
 
     permission_classes = [permissions.IsAuthenticated]
 
-    def get_object(self, email):
-        try:
-            return MaaliUser.objects.get(email=email)
-        except MaaliUser.DoesNotExist:
-            return response.Response({'error': 'No user found'}, status=status.HTTP_404_NOT_FOUND)
-
     def get(self, request):
-        email = request.data.get('email', None)
-        user = self.get_object(email)
+        user = self.request.user
         serializer = UserDetailsSerializer(user)
         return response.Response(serializer.data)

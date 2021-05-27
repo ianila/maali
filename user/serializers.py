@@ -19,7 +19,7 @@ class LoginSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = MaaliUser
-        fields = ('email', 'password', 'token')
+        fields = ('email', 'first_name', 'last_name', 'password', 'token')
 
         read_only_fields = ['token']
 
